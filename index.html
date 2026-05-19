@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🍻 CONVOCADOS PARA BEBER NA COPA 🍻</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+    url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ANIMAÇÃO FUNDO */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(255,208,0,.15), transparent 25%),
+    radial-gradient(circle at 80% 30%, rgba(255,120,0,.15), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,.06), transparent 20%);
+    animation: brilho 8s infinite alternate;
+    z-index:-1;
+}
+
+@keyframes brilho{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.1);
+    }
+}
+
+.container{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:30px;
+}
+
+/* TOPO */
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-family:'Bebas Neue', cursive;
+    font-size:6rem;
+    letter-spacing:5px;
+    color:#ffd000;
+    text-shadow:
+    0 0 10px #ffd000,
+    0 0 25px #ff8800,
+    0 0 50px #ff5500;
+    animation: pisca 2s infinite alternate;
+}
+
+@keyframes pisca{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.03);
+    }
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:1.3rem;
+    color:#ddd;
+}
+
+.hero .sub{
+    margin-top:10px;
+    color:#ffcc00;
+    font-weight:700;
+}
+
+/* PLACAR */
+
+.placar{
+    margin:30px auto 60px;
+    width:fit-content;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    border:2px solid rgba(255,255,255,.2);
+    padding:20px 35px;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(0,0,0,.4);
+}
+
+.placar h2{
+    font-size:2rem;
+    color:#fff;
+}
+
+.x{
+    font-size:3rem;
+    color:#ffcc00;
+    font-weight:bold;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+
+/* CARD */
+
+.card{
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+    padding:30px 20px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.15);
+    transition:.4s;
+    text-align:center;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    width:150%;
+    height:150%;
+    background:linear-gradient(
+    45deg,
+    transparent,
+    rgba(255,208,0,.15),
+    transparent
+    );
+    top:-120%;
+    left:-120%;
+    transform:rotate(25deg);
+    transition:.7s;
+}
+
+.card:hover::before{
+    top:100%;
+    left:100%;
+}
+
+.card:hover{
+    transform:translateY(-12px) scale(1.04);
+    border-color:#ffd000;
+    box-shadow:
+    0 0 15px rgba(255,208,0,.5),
+    0 0 35px rgba(255,120,0,.35);
+}
+
+.emoji{
+    font-size:4rem;
+    margin-bottom:15px;
+    animation:flutuar 3s infinite ease-in-out;
+}
+
+@keyframes flutuar{
+    0%{ transform:translateY(0px);}
+    50%{ transform:translateY(-8px);}
+    100%{ transform:translateY(0px);}
+}
+
+.nome{
+    font-size:1.5rem;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.numero{
+    width:70px;
+    height:70px;
+    margin:auto;
+    border-radius:50%;
+    background:linear-gradient(135deg,#ffd000,#ff8800);
+    color:black;
+    font-size:2rem;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 0 20px rgba(255,208,0,.5);
+    margin-bottom:15px;
+}
+
+.frase{
+    color:#ddd;
+    font-size:.95rem;
+    line-height:1.5;
+}
+
+/* TITULO */
+
+.titulo-time{
+    margin:70px 0 30px;
+    text-align:center;
+    font-family:'Bebas Neue';
+    font-size:3rem;
+    letter-spacing:3px;
+    color:#ffcc00;
+}
+
+/* FOOTER */
+
+.footer{
+    margin-top:70px;
+    text-align:center;
+    padding:30px;
+    background:rgba(0,0,0,.5);
+    border-top:2px solid rgba(255,255,255,.1);
+}
+
+.footer h3{
+    font-size:2rem;
+    color:#ffd000;
+    margin-bottom:10px;
+}
+
+.footer p{
+    color:#ccc;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:3.5rem;
+}
+
+.placar{
+    flex-direction:column;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>🍻 CONVOCADOS PARA BEBER NA COPA 🍻</h1>
+
+        <p>
+            A seleção mais perigosa do churrasco brasileiro
+        </p>
+
+        <div class="sub">
+            ⚽🔥 Especialistas em litrão, truco e desaparecer no after 🔥⚽
+        </div>
+
+    </section>
+
+    <!-- PLACAR -->
+
+    <div class="placar">
+        <h2>CHURRASCO</h2>
+        <div class="x">X</div>
+        <h2>DIGNIDADE</h2>
+    </div>
+
+    <!-- TITULO -->
+
+    <div class="titulo-time">
+        🍺 ESCALAÇÃO OFICIAL 🍺
+    </div>
+
+    <!-- JOGADORES -->
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="emoji">🧤</div>
+            <div class="nome">Erick</div>
+            <div class="numero">08</div>
+            <div class="frase">
+                Defende o copo melhor que goleiro em final.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🥃</div>
+            <div class="nome">Tuliao</div>
+            <div class="numero">05</div>
+            <div class="frase">
+                Começa no refri e termina abraçando poste.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🍻</div>
+            <div class="nome">Kaio</div>
+            <div class="numero">02</div>
+            <div class="frase">
+                Patrimônio histórico dos litrões.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🔥</div>
+            <div class="nome">Zé</div>
+            <div class="numero">22</div>
+            <div class="frase">
+                Nunca perde um after suspeito.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🍖</div>
+            <div class="nome">Masaro</div>
+            <div class="numero">14</div>
+            <div class="frase">
+                Artilheiro oficial do churrasco.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🎉</div>
+            <div class="nome">Nannetti</div>
+            <div class="numero">09</div>
+            <div class="frase">
+                Centroavante da bagunça.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🍹</div>
+            <div class="nome">Tico</div>
+            <div class="numero">69</div>
+            <div class="frase">
+                Mistura tudo e ainda pede mais.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🍾</div>
+            <div class="nome">João Caproni</div>
+            <div class="numero">11</div>
+            <div class="frase">
+                Craque absoluto do open bar.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🚨</div>
+            <div class="nome">Ferdbala</div>
+            <div class="numero">01</div>
+            <div class="frase">
+                Reserva estratégico do litrão.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🌙</div>
+            <div class="nome">João Ricardo</div>
+            <div class="numero">07</div>
+            <div class="frase">
+                O homem que transforma “só uma” em amanhecer.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🍔</div>
+            <div class="nome">Gordinho</div>
+            <div class="numero">99</div>
+            <div class="frase">
+                Atacante mortal da mesa de carne.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🥤</div>
+            <div class="nome">Kiwi</div>
+            <div class="numero">06</div>
+            <div class="frase">
+                Sobrevive só no energético e ódio.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🍺</div>
+            <div class="nome">Cauan</div>
+            <div class="numero">03</div>
+            <div class="frase">
+                Nunca aceita ir embora cedo.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🎶</div>
+            <div class="nome">Maranezi</div>
+            <div class="numero">04</div>
+            <div class="frase">
+                DJ oficial das ideias erradas.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🐯</div>
+            <div class="nome">Tigre</div>
+            <div class="numero">33</div>
+            <div class="frase">
+                Monstro sagrado da resenha.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">💀</div>
+            <div class="nome">Kaiao</div>
+            <div class="numero">00</div>
+            <div class="frase">
+                Último sobrevivente do rolê.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">⚡</div>
+            <div class="nome">Vitinho</div>
+            <div class="numero">17</div>
+            <div class="frase">
+                Especialista mundial em virar copo.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">⚽</div>
+            <div class="nome">João P</div>
+            <div class="numero">07</div>
+            <div class="frase">
+                Bebe, joga e ainda arruma confusão.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🚀</div>
+            <div class="nome">Micael</div>
+            <div class="numero">25</div>
+            <div class="frase">
+                Acelera a resenha até dar ruim.
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <h3>
+            🍻 RESENHA DOS ZAMIGO 🍻
+        </h3>
+
+        <p>
+            “Se beber não dirija… chama os cria.”
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
